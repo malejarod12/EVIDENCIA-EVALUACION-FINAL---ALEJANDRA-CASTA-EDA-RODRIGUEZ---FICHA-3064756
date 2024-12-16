@@ -1,0 +1,61 @@
+real calculo, calificacion
+entero alumnos, arriba_promedio, opcion, i
+arreglo [100] de real calificaciones
+	inicio
+		calculo<-0
+		arriba_promedio<-0
+		repita 
+		escriba "bienvenido al menu de calificaciones"
+			llamar nueva_linea
+		escriba "1. Ingrese su calificacion"
+			llamar nueva_linea
+		escriba "2. Calcular y mostrar promedio"
+			llamar nueva_linea
+		escriba "3. Determinar calificaciones arriba del promedio"
+			llamar nueva_linea
+		escriba "4. Salir"
+			llamar nueva_linea
+		escriba "Opcion: "
+		Lea opcion
+		caso opcion 
+			1: 
+			escriba "ingrese el numero de estudiantes"
+			lea alumnos
+			llamar nueva_linea
+			para i<-1 hasta alumnos haga 
+				escriba "ingrese la calificacion", i, ": "
+				lea calificacion 
+				llamar nueva_linea
+				calificaciones[i]<- calificacion 
+			fin para 
+			llamar nueva_linea
+			2: 
+			si alumnos>0 entonces
+				para i<-1 hasta alumnos haga
+					calculo<- calculo+ calificaciones[i]
+				fin para 
+				calculo<-calculo/alumnos
+				escriba "el promedio es:", promedio 
+			sino
+				escriba "no ingreso su calificacion"
+			fin si
+			llamar nueva_linea
+			3: 
+			si alumnos > 0 entonces 
+				para i<-0 hasta num_estudiantes haga
+					si calificaciones[i]< calculo entonces 
+						arriba_promedio<- arriba_promedio + 1
+					fin si
+				fin para 
+				escriba "hay ", arriba_promedio, " calificaciones por encima del promedio"
+			sino 
+				escriba "no ingreso su calificacions"
+			fin si 
+			llamar nueva_linea
+			4: 
+			escriba "saliendo del programa..." 
+		fin caso 
+		hasta (opcion = 4)
+	fin 
+         
+        		
